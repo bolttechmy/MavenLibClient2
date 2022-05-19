@@ -8,8 +8,8 @@ task androidSourcesJar(type: Jar) {
         from android.sourceSets.main.java.srcDirs
         from android.sourceSets.main.kotlin.srcDirs
     } else {
-//        from sourceSets.main.java.srcDirs
-//        from sourceSets.main.kotlin.srcDirs
+        from sourceSets.main.java.srcDirs
+        from sourceSets.main.kotlin.srcDirs
     }
 }
 
@@ -39,11 +39,11 @@ afterEvaluate {
                 groupId PUBLISH_GROUP_ID
                 artifactId PUBLISH_ARTIFACT_ID
                 version PUBLISH_VERSION
-//                if (project.plugins.findPlugin("com.android.library")) {
-//                    from components.release
-//                } else {
-//                    from components.java
-//                }
+                if (project.plugins.findPlugin("com.android.library")) {
+                    from components.release
+                } else {
+                    from components.java
+                }
 
                 artifact androidSourcesJar
 //                artifact javadocJar
@@ -64,11 +64,11 @@ afterEvaluate {
                             name = 'Jitendra'
                             email = 'jitendra.prajapati@bolttech.io'
                         }
-//                        developer {
-//                            id = 'jcminarro'
-//                            name = 'Jc Miñarro'
-//                            email = 'josecarlos@getstream.io'
-//                        }
+                        developer {
+                            id = 'anandkumar'
+                            name = 'Anand Kumar'
+                            email = 'anand.kumar@puresoftware.com'
+                        }
                     }
                     scm {
                         connection = 'scm:git:github.com/bolttechmy/MavenLibClient2.git'
