@@ -1,13 +1,19 @@
 plugins {
-    id 'com.android.application'
+//    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
-
+ext {
+    PUBLISH_GROUP_ID = 'io.github.bolttechmy'
+    PUBLISH_VERSION = '1.1.2'
+    PUBLISH_ARTIFACT_ID = 'MavenLibClient2'
+}
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.mavenlib2"
+//        applicationId "com.example.mavenlib2"
         minSdk 21
         targetSdk 32
         versionCode 1
